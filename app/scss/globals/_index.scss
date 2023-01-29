@@ -1,0 +1,13 @@
+/*
+* @forward
+* ********
+* - Sirve para traer a un fichero el contenido de otro. 
+* - Con la regla @forward, se podrá hacer que los miembros de otro
+*   archivo estén disponibles cuando el archivo actual sea importado con @use.
+* - El archivo que realice el @forward, no podrá acceder a los miembros de éste,
+*   a diferencia de @use, sino que actuará como un simple intermediario.
+* - La regla @forward hace posible la organización de archivos SASS dejando a los usuarios
+*   cargar un solo archivo como entrada.
+*/
+@forward 'boilerplate';
+@forward 'typography';

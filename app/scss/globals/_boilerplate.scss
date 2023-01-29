@@ -1,0 +1,35 @@
+//* Este es un archivo parcial (partial)
+//* boilerplate = repetitivo
+
+/* 
+* font-size: 100% de la fuente, es un propósito de accesibilidad, porque asegurará que 
+* el tamaño de la fuente en su sitio web va a coincidir con el 100% del tamaño
+* de la fuente predeterminado establecido en su navegador y eso es lo que
+* puede cambiar en el navegador, por lo que esto será por defecto a 16px
+
+* box-sizing: border-box; Asegura que si agrega padding o border a un elemento html, 
+* significa que se incluirá en el ancho o alto final del elemento. Es decir,
+* digamos que tengo una caja que he configurado para tener 300px de ancho y luego agrego
+* 20px de padding en todos los lados, el ancho final seguirá siendo 300px, es decir,
+* si no tuviera ese atributo border-box, el ancho final serían 20-300-20 => 340px, pero
+* como tenemos definido el border-box, el ancho final siempre serán 300px
+*/
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+//*::before, ::after, son pseudoelementos
+*,
+*::before,
+*::after {
+    box-sizing: inherit; //* esto heredará el box-sizing del html definido al inicio
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: hsl(0, 0%, 11%);
+    color: hsl(0, 0, 100%),
+}

@@ -1,0 +1,14 @@
+/* 
+* Prodríamos haber colocado:
+*       @use './globals/index';
+* Pero sass, en automático buscará dentro del directorio ./globals
+* un archivo llamado _index.scss, por eso es que lo nombramos de esa manera.
+* Digamos, que son como los index.html
+*
+* @use
+* *****
+* - Es una regla utilizada para la carga de mixins, funciones y variables de otros 
+*   archivos SASS.
+* - Las hojas de estilo cargadas con @use son llamadas módulos.
+*/
+@use './globals';
