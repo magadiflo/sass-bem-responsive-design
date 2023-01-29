@@ -1,0 +1,11 @@
+{
+  "name": "responsive-design-beginners",
+  "version": "1.0.0",
+  "description": "Sass, BEM & Responsive Design",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./app/scss/style.scss ./dist/style.css"
+  },
+  "author": "Martín Díaz",
+  "license": "ISC"
+}
