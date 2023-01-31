@@ -9,5 +9,6 @@
 * - La regla @forward hace posible la organización de archivos SASS dejando a los usuarios
 *   cargar un solo archivo como entrada.
 */
+@forward 'colors';
 @forward 'boilerplate';
 @forward 'typography';

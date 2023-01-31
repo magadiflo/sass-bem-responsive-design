@@ -14,6 +14,18 @@
 * si no tuviera ese atributo border-box, el ancho final serían 20-300-20 => 340px, pero
 * como tenemos definido el border-box, el ancho final siempre serán 300px
 */
+/*
+* @use
+* *****
+* - Se declara al principio del archivo en el que se quiere tener acceso
+*   a los miembros (variables, mixins y funciones) para poder usarlos.
+* - Las hojas de estilo cargadas con @use son llamadas módulos.
+* - Por defecto están encapsuladas con el nombre del fichero.
+* - Podemos renombrar los namespaces usando "as". En nuestro caso
+*   lo renombramos a "u"
+*/
+@use '../util/' as u;
+
 html {
     box-sizing: border-box;
     font-size: 100%;
@@ -29,7 +41,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: u.$font;
     background-color: hsl(0, 0%, 11%);
     color: hsl(0, 0, 100%),
 }
