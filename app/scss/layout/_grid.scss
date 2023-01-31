@@ -3,13 +3,16 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     gap: 40px;
+    //*max-width: 1000px;
+    width: min(100% - 40px, 1000px); //* Es similar al max-width, con la diferencia, que en dispositivos menores a 1000px siempre tomará el 100% - 40px
+    margin-inline: auto; //* Es lo mismo que el margin, pero este encapsula al margin-end y margin-star
 
     @media (min-width: 900px) {
         grid-template-columns: 2fr 1fr; //* Le decimos que la primera columna sea el doble de la segunda
         grid-template-rows: auto;
     }
 
-    &__main, 
+    &__main,
     &__sidebar {
         padding: 40px;
     }
