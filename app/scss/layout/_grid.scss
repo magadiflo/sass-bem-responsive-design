@@ -1,3 +1,5 @@
+@use '../util/' as u;
+
 .grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -7,7 +9,8 @@
     width: min(100% - 40px, 1000px); //* Es similar al max-width, con la diferencia, que en dispositivos menores a 1000px siempre tomará el 100% - 40px
     margin-inline: auto; //* Es lo mismo que el margin, pero este encapsula al margin-end y margin-star
 
-    @media (min-width: 900px) {
+    @include u.breakpoint(large) {
+        //* large, es el key del mapa $breakpoints-up definidos en el _breakpoints.scss
         grid-template-columns: 2fr 1fr; //* Le decimos que la primera columna sea el doble de la segunda
         grid-template-rows: auto;
     }
@@ -23,5 +26,9 @@
 
     &__sidebar {
         background-color: hsl(300, 95%, 30%);
+
+        @include u.breakpoint-down(medium) {
+            text-align: center;
+        }
     }
 }
