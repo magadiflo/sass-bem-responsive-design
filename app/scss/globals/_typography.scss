@@ -1,9 +1,52 @@
+@use '../util/' as u;
+
 h1,
 h2,
 h3 {
     font-weight: 700;
     line-height: 1.1;
     margin-top: 0;
+}
+
+//* Aplicando Media Querys para definir tamaño de fuentes responsive
+//* ****************************************************************
+//* Estos estilos, sin media query son  los predeterminados,
+//* es decir, son estilos para un diseño móvil (movil first). 
+//* luego usando los media query, vamos cambiando, según se requiera,
+//* para los diseños en tablet y luego escritorio, etc...
+h1 {
+    font-size: 28px; //* Aplicado a un diseño móvil
+
+    //* Digamos que es para tablet
+    @include u.breakpoint(medium) {
+        font-size: 36px;
+    }
+
+    //* Digamos que es para pc escritorio
+    @include u.breakpoint(large) {
+        font-size: 42px;
+    }
+}
+
+//* Aplicando unidad de medida "vw" para hacer fuentes responsivas
+//* **************************************************************
+//* De esta manera, la fuente se redimensionará automáticamente dependiendo
+//* del tamaño de la vista, así evitamos usar los media querys.
+h2 {
+    //* 28px/375px (375px suponiendo que es el ancho de un móvil) = 7.5vw
+    //* 28px, el tamaño de fuente en px que le daríamos cuando es móvil
+    //* vw, unidad de medida que toma como referencia el ancho de la pantalla
+    //*font-size: 7.5vw;
+
+
+    //* Para evitar que la fuente se vea extremadamente grande, podemos usar la 
+    //* función calc() y darle como base 16px y sumarle 2vw del size de la pantalla
+    //*font-size: calc(16px + 2vw);
+
+    //* Si queremos limitar el crecimiendo de la fuente, podemo susar la función clamp(...)
+    //* Recibe 3 parámetros: (valor mínimo, valor actual, valor máximo)
+    //* Es decir, como mínimo la fuente se reducirá hasta 28px y como máximo aumentará hasta 40px
+    font-size: clamp(28px, 16px + 2vw, 40px);
 }
 
 p {
