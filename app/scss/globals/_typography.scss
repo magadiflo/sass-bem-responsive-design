@@ -54,22 +54,39 @@ h2 {
 /***
 * * rem
 * * ***
-* * Toma como referencia la raíz del sitio web o el tamaño de la fuente base
-* * establecido en la configuración del navegador. Por defecto, todo navegador
-* * tiene definido su fuente base a 16px. Por lo tanto:
-* * 1rem == 16px
+* * - Rem significa "Root Em", o sea es un "em" basado en la raíz.
+* * - Toma como referencia el tamaño de la fuente definida explícitamente 
+* *   en el elemento raíz del documento, o sea, en el elemento <html>.
+* *   Ejemplo:
+* *         html {
+* *              font-size: 16px; //* 1 rem == 16px
+* *        }
+* * - Si no se define explícitamente, el tamaño de la fuente en el 
+* *   elemento raíz (html), entonces tomará como referencia el tamaño de la fuente base
+* *   establecido en la configuración del navegador. Por defecto, todo navegador
+* *   tiene definido su fuente base a 16px. 
+* *   Por lo tanto:
+* *         1rem == 16px.
 * *
 * * 
 * * em
 * * **
-* * Se basa en la fuente definida en el elemento padre. Si el elemento padre
-* * no tiene definido explícitamente un tamaño de fuente, toma el del siguiente
-* * elemento padre. Si ningún elemento padre tiene definod un tamaño de fuente,
-* * entonces tomará como referencia la fuente definida en el navegador.
+* * - Toma como referencia el tamaño de la fuente definida de forma explícita en el elemento actual.
+* * - Si el elemento actual no tiene definido un font-size, entonces tomará como referencia el
+* *   font-size definida en su elemento padre. 
+* * - Si el elemento padre no tiene definido explícitamente un tamaño de fuente, toma el del siguiente
+* *   elemento padre. 
+* * - Si ningún elemento padre tiene definido un tamaño de fuente,
+* *   entonces tomará como referencia la fuente definida en el navegador.
+* *   Ejemplo:
+* *         p {
+* *             font-size: 18px; // Fuente definida de forma explícita
+* *             padding: 1em; // 1em == 18px
+* *         }
 * * 
 * * 
-* * CONCLUSIÓN: Entre los dos el más sencillo sería usar rem, ya que solo es saber
-* * que toma como base la fuente configurada en el navegador. 
+* * CONCLUSIÓN: Entre los dos el más sencillo sería usar "rem", ya que solo es saber
+* * que toma como base la fuente configurada en la raiz <html> o el del navegador. 
 * * 
 * * NOTA: Ambas unidades de medida son relativas, mientras que los px, cm, etc. son absolutas.
 */
@@ -89,3 +106,5 @@ a:visited,
 a:active {
     text-decoration: none;
 }
+
+//* 2:33:27
