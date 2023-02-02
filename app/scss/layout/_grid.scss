@@ -6,7 +6,7 @@
     grid-template-rows: auto auto;
     gap: u.rem(40px);
     //*max-width: 1000px;
-    width: min(100% - u.rem(40px), 1000px); //* Es similar al max-width, con la diferencia, que en dispositivos menores a 1000px siempre tomará el 100% - 40px
+    width: min(100% - u.rem(40px), u.rem(1000px)); //* Es similar al max-width, con la diferencia, que en dispositivos menores a 1000px siempre tomará el 100% - 40px
     margin-inline: auto; //* Es lo mismo que el margin, pero este encapsula al margin-end y margin-star
 
     @include u.breakpoint(large) {
