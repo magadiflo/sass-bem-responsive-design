@@ -49,14 +49,13 @@
     }
 
     &__widget {
+        padding: u.rem(16px);
         
         &--magenta {
-            @extend %widget;
             background-color: hsl(300, 95%, 30%);
         }
         
         &--green {
-            @extend %widget; //* Extendiendo el placeholder
             background-color: rgb(3, 228, 3);
         }
     }
