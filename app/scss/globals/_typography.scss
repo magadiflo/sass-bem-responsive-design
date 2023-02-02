@@ -46,11 +46,42 @@ h2 {
     //* Si queremos limitar el crecimiendo de la fuente, podemo susar la función clamp(...)
     //* Recibe 3 parámetros: (valor mínimo, valor actual, valor máximo)
     //* Es decir, como mínimo la fuente se reducirá hasta 28px y como máximo aumentará hasta 40px
-    font-size: clamp(28px, 16px + 2vw, 40px);
+
+    //* font-size: clamp(28px, 16px + 2vw, 40px);
+    font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
+}
+
+/***
+* * rem
+* * ***
+* * Toma como referencia la raíz del sitio web o el tamaño de la fuente base
+* * establecido en la configuración del navegador. Por defecto, todo navegador
+* * tiene definido su fuente base a 16px. Por lo tanto:
+* * 1rem == 16px
+* *
+* * 
+* * em
+* * **
+* * Se basa en la fuente definida en el elemento padre. Si el elemento padre
+* * no tiene definido explícitamente un tamaño de fuente, toma el del siguiente
+* * elemento padre. Si ningún elemento padre tiene definod un tamaño de fuente,
+* * entonces tomará como referencia la fuente definida en el navegador.
+* * 
+* * 
+* * CONCLUSIÓN: Entre los dos el más sencillo sería usar rem, ya que solo es saber
+* * que toma como base la fuente configurada en el navegador. 
+* * 
+* * NOTA: Ambas unidades de medida son relativas, mientras que los px, cm, etc. son absolutas.
+*/
+
+h3 {
+    //* font-size: clamp(22px, 14px + 1.5vw, 36px);
+    font-size: clamp(1.375rem, 0.875rem + 1.5vw, 2.25rem);
 }
 
 p {
     margin-top: 0;
+    font-size: 1rem;
 }
 
 a,
