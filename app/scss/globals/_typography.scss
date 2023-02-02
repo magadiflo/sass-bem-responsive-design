@@ -15,16 +15,16 @@ h3 {
 //* luego usando los media query, vamos cambiando, según se requiera,
 //* para los diseños en tablet y luego escritorio, etc...
 h1 {
-    font-size: 28px; //* Aplicado a un diseño móvil
+    font-size: u.rem(28px); //* Aplicado a un diseño móvil
 
     //* Digamos que es para tablet
     @include u.breakpoint(medium) {
-        font-size: 36px;
+        font-size: u.rem(36px);
     }
 
     //* Digamos que es para pc escritorio
     @include u.breakpoint(large) {
-        font-size: 42px;
+        font-size: u.rem(42px);
     }
 }
 
@@ -47,8 +47,8 @@ h2 {
     //* Recibe 3 parámetros: (valor mínimo, valor actual, valor máximo)
     //* Es decir, como mínimo la fuente se reducirá hasta 28px y como máximo aumentará hasta 40px
 
-    //* font-size: clamp(28px, 16px + 2vw, 40px);
-    font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
+    font-size: clamp(u.rem(28px), u.rem(16px) + 2vw, u.rem(40px));
+    //*font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
 }
 
 /***
@@ -92,13 +92,13 @@ h2 {
 */
 
 h3 {
-    //* font-size: clamp(22px, 14px + 1.5vw, 36px);
-    font-size: clamp(1.375rem, 0.875rem + 1.5vw, 2.25rem);
+    font-size: clamp(u.rem(22px), u.rem(14px) + 1.5vw, u.rem(36px));
+    //* font-size: clamp(1.375rem, 0.875rem + 1.5vw, 2.25rem);
 }
 
 p {
     margin-top: 0;
-    font-size: 1rem;
+    font-size: u.rem(16px);
 }
 
 a,
@@ -106,5 +106,3 @@ a:visited,
 a:active {
     text-decoration: none;
 }
-
-//* 2:33:27

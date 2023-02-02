@@ -1,0 +1,42 @@
+/*
+* Sass proporciona muchos módulos integrados que contienen funciones útiles 
+* (y mezclas ocasionales). Estos módulos se pueden cargar con la regla @use como 
+* cualquier hoja de estilo definida por el usuario, y sus funciones se pueden llamar 
+* como cualquier otro miembro del módulo. Todas las URL de los módulos incorporados 
+* comienzan con sass: para indicar que son parte de Sass.
+* */
+@use 'sass:math';
+
+/*
+* math.div($number1, $number2) //=> number 
+* *****************************************
+* - Cualquier unidad compartida por ambos números será cancelada. 
+* - Las unidades en $número1 que no están en $número2 terminarán en el numerador del valor de retorno.
+* - Las unidades en $número2 que no están en $número1 terminarán en su denominador.
+* 
+* Ejemplo: 
+* @debug math.div(1, 2); // 0.5
+* @debug math.div(100px, 5px); // 20 <----- Nuestra función debe tomar este caso
+* @debug math.div(100px, 5); // 20px
+* @debug math.div(100px, 5s); // 20px/s
+*/
+
+//* NOTA: Usar el operador de división / en sass está obsoleto
+@function rem($pixel) { //* $pixel, debe venir con la unidad en px, ejm. 32px
+    //* Comprobamos que el $pixel venga con la unidad px
+    @if math.unit($pixel) == 'px' {
+        //* dividir el $pixel por 16px dará como resultado un número sin unidad (ver ejemplo de arriba),
+        //* ahora, como queremos retornar en rem, al resultado (sin unidad) lo multiplicamos por 1rem
+        @return math.div($pixel, 16px) * 1rem;
+    } @else {
+        @error 'Se espera un número con la unidad en px, pero se ingresó #{$pixel}';
+    }
+}
+
+@function em($pixel) {
+    @if math.unit($pixel) == 'px' {
+        @return math.div($pixel, 16px) * 1em;
+    } @else {
+        @error 'Se espera un número con la unidad en px, pero se ingresó #{$pixel}';
+    }
+}
